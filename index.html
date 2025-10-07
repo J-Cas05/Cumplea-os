@@ -1,0 +1,207 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎂 Feliz Cumpleaños, Papá 💛</title>
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #d7e3fc, #f0f4ff);
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+
+
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+    .screen {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      flex-direction: column;
+    }
+    .active {
+      display: flex;
+    }
+    .password-screen {
+      flex-direction: column;
+    }
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 60px);
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .key {
+  background-color: #c5d8f7;   /* Azul pastel */
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  color: #1a237e;              /* Azul oscuro para el texto */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.key:hover {
+  background-color: #b0c9f0;   /* Azul un poco más fuerte al pasar el mouse */
+  transform: scale(1.05);
+}
+
+.input-display {
+  font-size: 24px;
+  margin-top: 20px;
+  letter-spacing: 8px;
+  color: #1a237e;              /* Hace juego con los botones */
+}
+.gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+      position: relative;
+      z-index: 2;
+      max-width: 95%;
+    }
+
+    .gallery img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeIn 1.5s forwards;
+    }
+
+    .gallery img:nth-child(1) { animation-delay: 0.5s; }
+    .gallery img:nth-child(2) { animation-delay: 1s; }
+    .gallery img:nth-child(3) { animation-delay: 1.5s; }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #5d4037;
+      background: #fff3e0;
+      padding: 15px 25px;
+      border-radius: 20px;
+      box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+      max-width: 80%;
+      line-height: 1.6;
+    }
+    /* 🎉 Confeti de cumpleaños */
+    .confetti {
+      position: fixed;
+      top: -50px;
+      font-size: 26px;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+<div id="passwordScreen" class="screen password-screen active">
+  <h2>🎂 Ingresa la contraseña secreta</h2>
+  <div class="input-display" id="inputDisplay">••••</div>
+  <div class="keypad">
+    <button class="key" onclick="enterDigit('1')">1</button>
+    <button class="key" onclick="enterDigit('2')">2</button>
+    <button class="key" onclick="enterDigit('3')">3</button>
+    <button class="key" onclick="enterDigit('4')">4</button>
+    <button class="key" onclick="enterDigit('5')">5</button>
+    <button class="key" onclick="enterDigit('6')">6</button>
+    <button class="key" onclick="enterDigit('7')">7</button>
+    <button class="key" onclick="enterDigit('9')">9</button>
+    <button class="key" onclick="enterDigit('8')">8</button>
+    <div></div>
+    <button class="key" onclick="enterDigit('0')">0</button>
+    <div></div>
+  </div>
+</div>
+
+<div id="notepadScreen" class="screen">
+  <div class="gallery">
+    <!-- 🎂 Cambia esta imagen por una tuya o de tu papá -->
+    <img src="https://scontent.flim28-1.fna.fbcdn.net/v/t39.30808-6/469598771_571440049078693_6630979336638392846_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeED1BAEQGCZdRb2p1GF54QMUDTy1WgZm51QNPLVaBmbnb1MrnJeOWZiElBTQmdSphm3BwnpB6IIK3vwOeZv35hK&_nc_ohc=x86wA6iynTwQ7kNvwFqJp1T&_nc_oc=AdkV5YmRBTV_nQZRLStCu3Y8kT5xWcpSQiDmkXqiClrdoqWUWZbd3fBfJzr1-jwnGZI&_nc_zt=23&_nc_ht=scontent.flim28-1.fna&_nc_gid=OqQCVZ5gKoGi91CEinb4ew&oh=00_Afd-ATd7DVNo79pWEL1z8BiJ131W_uXvTues2N4ZDnzl_Q&oe=68EA8C19" alt="Foto 1 - Papá">
+    <img src="https://scontent.flim28-1.fna.fbcdn.net/v/t39.30808-6/480227862_1361377331711448_7985457712333827337_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHIHy3lnGoc_wJpCJ6Zw0_i7Pmzu5cbxL_s-bO7lxvEv9mzNjtl4NPB4_qSolWiWZ-sob_rVzECwbR128-7xSl1&_nc_ohc=TWnaB7QisC0Q7kNvwH80LT8&_nc_oc=AdmCGFTE8U4URPfj1Sv6qPaKXcJzsWC6FbIVa6G8aF8SHNT8-yTQReQW2Vp9V5mIc_k&_nc_zt=23&_nc_ht=scontent.flim28-1.fna&_nc_gid=cMomoKUlctTnZRWrPViCbg&oh=00_AfdnE0JAI--mj9w1HZdZJ-gbK70AxVQ4ChT7cv7LIHQhgw&oe=68EA82D3" alt= "Feliz Cumpleaños Papá">
+    <img src="https://scontent.flim28-1.fna.fbcdn.net/v/t39.30808-6/480156043_1361377328378115_3853604815421745688_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFpaO-XgTSYcHvS62-gzoOyZkdKSanczgdmR0pJqdzOBzHBkzFNYWpTggSyGuB0GPu57GbKqC6d0Z4zBaiItJpI&_nc_ohc=szZdHXplN9kQ7kNvwHxkYxC&_nc_oc=AdmfMnNP7BLSgl_7PxBxoTIYZ7letKbSwyWiV1G_STQ4rcOuIO_cFyXUUWYiV1mIb6g&_nc_zt=23&_nc_ht=scontent.flim28-1.fna&_nc_gid=agNnbtGp8-Myrlh44wOiWA&oh=00_AfdjhSJBhZg9eTvREYneqrQtgmGmNQvWZplKvz245sBQ5g&oe=68EA7ACF" alt="Foto 3 - Recuerdo">
+</div>
+  <div class="message">
+    🎈 ¡Feliz cumpleaños, papá! 🎉<br><br>
+    Gracias por ser mi ejemplo, mi fuerza y mi mayor apoyo.  
+    Que la vida te regale muchos años más llenos de salud, sonrisas y amor.  
+    Te quiero muchísimo. 🎂✨
+  </div>
+</div>
+
+<script>
+  const correctPassword = '0710'; // Puedes cambiarla
+  let input = '';
+  function enterDigit(digit) {
+    if (input.length < 4) {
+      input += digit;
+    }
+    const display = document.getElementById('inputDisplay');
+    display.textContent = input.padEnd(4, '•');
+    if (input.length === 4) {
+      if (input === correctPassword) {
+        document.getElementById('passwordScreen').classList.remove('active');
+        document.getElementById('notepadScreen').classList.add('active');
+        startConfetti();
+      } else {
+        alert('❌ Contraseña incorrecta, intenta de nuevo');
+        input = '';
+        display.textContent = '••••';
+      }
+    }
+  }
+
+  // 🎉 Animación de confeti de cumpleaños
+  function startConfetti() {
+    for (let i = 0; i < 25; i++) {
+      createConfetti();
+    }
+    setInterval(createConfetti, 800);
+  }
+
+  function createConfetti() {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    const emojis = ['🎉','🎂','🎈','🎊'];
+    confetti.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    confetti.style.left = Math.random() * window.innerWidth + 'px';
+    confetti.style.animationDuration = (3 + Math.random() * 4) + 's';
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 7000);
+  }
+</script>
+</body>
+</html>
